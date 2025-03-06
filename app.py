@@ -5,7 +5,8 @@ import os
 
 app = Flask(__name__)
 
-STOCKFISH_PATH = "stockfish/stockfish" if os.getenv("RENDER") else "C:\\Users\\khatr\\Downloads\\stockfish-windows-x86-64-avx2\\stockfish\\stockfish-windows-x86-64-avx2.exe"
+STOCKFISH_PATH = "/usr/games/stockfish"
+
 
 
 engine = chess.engine.SimpleEngine.popen_uci(STOCKFISH_PATH)

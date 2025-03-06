@@ -24,4 +24,5 @@ def get_best_move():
     return jsonify({"botMove": best_move})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8080))  # Railway's default port
+    app.run(host="0.0.0.0", port=port, debug=True)

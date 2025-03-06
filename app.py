@@ -4,7 +4,8 @@ import chess.engine
 
 app = Flask(__name__)
 
-STOCKFISH_PATH = "C:\\Users\\khatr\\Downloads\\stockfish-windows-x86-64-avx2\\stockfish\\stockfish-windows-x86-64-avx2.exe"
+STOCKFISH_PATH = "./stockfish/stockfish"
+
 engine = chess.engine.SimpleEngine.popen_uci(STOCKFISH_PATH)
 
 @app.route("/move", methods=["POST"])

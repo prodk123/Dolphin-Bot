@@ -3,11 +3,14 @@
 # Create stockfish directory
 mkdir -p stockfish
 
-# Download the correct Linux Stockfish binary (precompiled)
-curl -L -o stockfish/stockfish https://api.github.com/repos/official-stockfish/Stockfish/releases/latest \
-    | grep "browser_download_url.*stockfish-linux-x86-64" \
-    | cut -d '"' -f 4 \
-    | xargs wget -O stockfish/stockfish
+# Download the correct precompiled Stockfish Linux binary
+curl -L -o stockfish/stockfish https://stockfishchess.org/files/stockfish-ubuntu.zip
+
+# Unzip and move to the stockfish directory
+unzip stockfish/stockfish-ubuntu.zip -d stockfish/
+
+# Find the correct binary inside the extracted folder and move it
+mv stockfish/stockfish-ubuntu/* stockfish/
 
 # Give execute permissions
 chmod +x stockfish/stockfish

@@ -8,8 +8,15 @@ export PYTHONUNBUFFERED=true
 # Ensure we're using Python 3
 python3 --version
 
+# Create and activate virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Upgrade pip
+pip install --upgrade pip
+
 # Install Python dependencies
-pip3 install --user -r requirements.txt
+pip install -r requirements.txt
 
 # Run the app with gunicorn
-~/.local/bin/gunicorn app:app --bind 0.0.0.0:3000 --timeout 600
+gunicorn app:app --bind 0.0.0.0:3000 --timeout 600

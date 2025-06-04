@@ -1,14 +1,14 @@
 import os
 from flask import Flask, render_template, jsonify, request
-from board import Board
-from move import Move
-from square import Square
-from piece import *
-from chess_ai_bot import get_best_move
-from const import BOARD_HEIGHT, BOARD_WIDTH
+from chessbot.board import Board
+from chessbot.move import Move
+from chessbot.square import Square
+from chessbot.piece import *
+from chessbot.chess_ai_bot import get_best_move
+from chessbot.const import BOARD_HEIGHT, BOARD_WIDTH
 import json
 import traceback
-from game import Game
+from chessbot.game import Game
 import random
 
 app = Flask(__name__, static_folder='static', template_folder='templates')

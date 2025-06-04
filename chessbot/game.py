@@ -1,5 +1,5 @@
-from board import Board
-from const import *
+from chessbot.board import Board
+from chessbot.const import *
 
 class Game:
     def __init__(self):

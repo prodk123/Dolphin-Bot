@@ -1,9 +1,9 @@
 import copy
 import math
 import random
-from board import Board
-from move import Move
-from piece import *
+from chessbot.board import Board
+from chessbot.move import Move
+from chessbot.piece import *
 
 # Piece-Square tables for positional evaluation
 PAWN_TABLE = [
